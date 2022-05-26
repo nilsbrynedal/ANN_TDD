@@ -12,8 +12,9 @@ namespace ANN_TDD
             INetFactory factory = new NetFactory();
 
             INet net = factory.CreateNet(data[0].Pixles.Length, possibleAnswers, 6);
-
-            var output = net.Update(data[0].Pixles);
+            IIdentifier identifier = new Identifier(net);
+            
+            var output = identifier.Identify(data[0].Pixles);
         }
     }
 }

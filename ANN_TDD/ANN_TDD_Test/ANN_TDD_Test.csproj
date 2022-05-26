@@ -67,6 +67,7 @@
     <Compile Include="NeuronTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NetFactoryTests.cs" />
+    <Compile Include="IdentifierTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
