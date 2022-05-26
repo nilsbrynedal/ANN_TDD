@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="LayerTest.cs" />
     <Compile Include="NetTests.cs" />
+    <Compile Include="NeuronTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
