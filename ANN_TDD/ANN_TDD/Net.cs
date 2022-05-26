@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 
 namespace ANN_TDD
 {
@@ -10,6 +11,8 @@ namespace ANN_TDD
         {
             this.layers = layers;
         }
+
+        public IReadOnlyCollection<ILayer> Layers => layers.AsReadOnly();
 
         public float[] Update(float[] data)
         {

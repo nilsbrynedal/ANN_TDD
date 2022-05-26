@@ -6,8 +6,14 @@ namespace ANN_TDD
     {
         static void Main(string[] args)
         {
-            List<Data> data = Data.ReadFile();
+            const int possibleAnswers = 10;
 
+            List<Data> data = Data.ReadFile();
+            INetFactory factory = new NetFactory();
+
+            INet net = factory.CreateNet(data[0].Pixles.Length, possibleAnswers, 6);
+
+            var output = net.Update(data[0].Pixles);
         }
     }
 }

@@ -46,9 +46,11 @@
     <Compile Include="Data.cs" />
     <Compile Include="ILayer.cs" />
     <Compile Include="INet.cs" />
+    <Compile Include="INetFactory.cs" />
     <Compile Include="INeuron.cs" />
     <Compile Include="Layer.cs" />
     <Compile Include="Net.cs" />
+    <Compile Include="NetFactory.cs" />
     <Compile Include="Neuron.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
