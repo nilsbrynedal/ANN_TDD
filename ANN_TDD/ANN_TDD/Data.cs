@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 namespace ANN_TDD
 {
-    class Data
+    public class Data
     {
         public static List<Data> ReadFile()
         {
