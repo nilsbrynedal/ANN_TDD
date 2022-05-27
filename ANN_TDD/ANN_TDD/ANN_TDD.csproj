@@ -50,12 +50,14 @@
     <Compile Include="INet.cs" />
     <Compile Include="INetFactory.cs" />
     <Compile Include="INeuron.cs" />
+    <Compile Include="IOutputLayer.cs" />
     <Compile Include="ITester.cs" />
     <Compile Include="ITrainer.cs" />
     <Compile Include="Layer.cs" />
     <Compile Include="Net.cs" />
     <Compile Include="NetFactory.cs" />
     <Compile Include="Neuron.cs" />
+    <Compile Include="OutputLayer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tester.cs" />

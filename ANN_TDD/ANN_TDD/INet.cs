@@ -13,6 +13,12 @@ namespace ANN_TDD
         /// <param name="data"></param>
         /// <returns></returns>
         float[] Update(float[] data);
-        void Backpropagate(float[] correctValues1);
+
+        /// <summary>
+        /// Starts backpropagation
+        /// </summary>
+        /// <param name="correctValues">The correct values for 
+        /// each neuron of the outut layer.</param>
+        void Backpropagate(float[] correctValues);
     }
 }

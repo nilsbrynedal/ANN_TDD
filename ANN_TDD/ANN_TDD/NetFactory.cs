@@ -45,10 +45,9 @@ namespace ANN_TDD
             List<ILayer> layers = new List<ILayer>()
             {
                 new Layer(neuronsFirstLayer),
-                new Layer(neuronsSecondLayer),
-                new Layer(neuronsThirdLayer)
+                new Layer(neuronsSecondLayer)
             };
-            return new Net(layers);
+            return new Net(layers, new OutputLayer(neuronsThirdLayer));
         }
 
         private float Sigmoid(float input) => (float)(Math.Exp(input) / (Math.Exp(input) + 1));

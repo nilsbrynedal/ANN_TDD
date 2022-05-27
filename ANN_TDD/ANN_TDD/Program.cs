@@ -5,7 +5,7 @@ namespace ANN_TDD
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             const int possibleAnswers = 10;
 
@@ -15,7 +15,7 @@ namespace ANN_TDD
             INet net = factory.CreateNet(data[0].Pixles.Length, possibleAnswers, 6);
             IIdentifier identifier = new Identifier(net);
             
-            var output = identifier.Identify(data[0].Pixles);
+            identifier.Identify(data[0].Pixles);
             Tester tester = new Tester();
 
             float proportion = tester.Test(identifier, data);
