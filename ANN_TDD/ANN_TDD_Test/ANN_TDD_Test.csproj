@@ -71,6 +71,7 @@
     <Compile Include="IdentifierTests.cs" />
     <Compile Include="TesterTests.cs" />
     <Compile Include="TrainerTests.cs" />
+    <Compile Include="OutputNeuronTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -5,6 +5,7 @@ namespace ANN_TDD
 {
     public class NetFactory : INetFactory
     {
+        private const float learningRate = (float)0.04;
         private readonly Random random;
 
         public NetFactory()
@@ -39,7 +40,7 @@ namespace ANN_TDD
             List<IOutputNeuron> neuronsThirdLayer = new List<IOutputNeuron>();
             for (int i = 0; i < outputCount; i++)
             {
-                neuronsThirdLayer.Add(new OutputNeuron(CreateWeights(neuronsPerHiddenLayer + 1), Sigmoid));
+                neuronsThirdLayer.Add(new OutputNeuron(CreateWeights(neuronsPerHiddenLayer + 1), Sigmoid, DerivativeOfSigmoid, learningRate));
             }
 
             List<ILayer> layers = new List<ILayer>()
@@ -50,7 +51,9 @@ namespace ANN_TDD
             return new Net(layers, new OutputLayer(neuronsThirdLayer));
         }
 
-        private float Sigmoid(float input) => (float)(Math.Exp(input) / (Math.Exp(input) + 1));
+        public static float Sigmoid(float input) => (float)(Math.Exp(input) / (Math.Exp(input) + 1));
+
+        public static float DerivativeOfSigmoid(float input) => Sigmoid(input) * (1 - Sigmoid(input));
 
         private float[] CreateWeights(int count)
         {
