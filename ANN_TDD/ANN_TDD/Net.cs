@@ -14,6 +14,11 @@ namespace ANN_TDD
 
         public IReadOnlyCollection<ILayer> Layers => layers.AsReadOnly();
 
+        public void Backpropagate(float[] correctValues1)
+        {
+            
+        }
+
         public float[] Update(float[] data)
         {
             var output = data;

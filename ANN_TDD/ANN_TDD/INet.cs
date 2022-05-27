@@ -13,5 +13,6 @@ namespace ANN_TDD
         /// <param name="data"></param>
         /// <returns></returns>
         float[] Update(float[] data);
+        void Backpropagate(float[] correctValues1);
     }
 }

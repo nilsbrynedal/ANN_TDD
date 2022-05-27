@@ -69,6 +69,7 @@
     <Compile Include="NetFactoryTests.cs" />
     <Compile Include="IdentifierTests.cs" />
     <Compile Include="TesterTests.cs" />
+    <Compile Include="TrainerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
