@@ -5,10 +5,12 @@ namespace ANN_TDD
     public class Neuron : INeuron
     {
         private readonly float[] weights;
+        private readonly Func<float, float> activationFunction;
 
-        public Neuron(float[] weights)
+        public Neuron(float[] weights, Func<float, float> activationFunction)
         {
             this.weights = weights;
+            this.activationFunction = activationFunction;
         }
 
         public float Update(float[] data)
@@ -18,15 +20,15 @@ namespace ANN_TDD
                 throw new ArgumentException();
             }
 
-            float output = 0;
+            float activation = 0;
 
             for (int i = 0; i < data.Length; i++)
             {
-                output += data[i] * weights[i];
+                activation += data[i] * weights[i];
             }
-            output += weights[weights.Length - 1];
+            activation += weights[weights.Length - 1];
 
-            return output;
+            return activationFunction(activation);
         }
     }
 }

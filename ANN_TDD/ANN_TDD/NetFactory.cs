@@ -25,21 +25,21 @@ namespace ANN_TDD
             List<INeuron> neuronsFirstLayer = new List<INeuron>();
             for(int i = 0; i < neuronsPerHiddenLayer; i++)
             {
-                neuronsFirstLayer.Add(new Neuron(CreateWeights(inputCount + 1)));
+                neuronsFirstLayer.Add(new Neuron(CreateWeights(inputCount + 1), Sigmoid));
             }
 
             // hidden layer
             List<INeuron> neuronsSecondLayer = new List<INeuron>();
             for (int i = 0; i < neuronsPerHiddenLayer; i++)
             {
-                neuronsSecondLayer.Add(new Neuron(CreateWeights(neuronsPerHiddenLayer + 1)));
+                neuronsSecondLayer.Add(new Neuron(CreateWeights(neuronsPerHiddenLayer + 1), Sigmoid));
             }
 
             // output layer
             List<INeuron> neuronsThirdLayer = new List<INeuron>();
             for (int i = 0; i < outputCount; i++)
             {
-                neuronsThirdLayer.Add(new Neuron(CreateWeights(neuronsPerHiddenLayer + 1)));
+                neuronsThirdLayer.Add(new Neuron(CreateWeights(neuronsPerHiddenLayer + 1), Sigmoid));
             }
 
             List<ILayer> layers = new List<ILayer>()
@@ -50,6 +50,8 @@ namespace ANN_TDD
             };
             return new Net(layers);
         }
+
+        private float Sigmoid(float input) => (float)(Math.Exp(input) / (Math.Exp(input) + 1));
 
         private float[] CreateWeights(int count)
         {
