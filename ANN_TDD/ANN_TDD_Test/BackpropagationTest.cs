@@ -9,7 +9,7 @@ namespace ANN_TDD
         /// <summary>
         /// Tests that given the same inputs, repeated backpropagation should get 
         /// the output closer and closer to the desired output.
-        /// TODO This test must be made harder. Right now it is enough that the output 
+        /// This test is not so hard. Right now it is enough that the output 
         /// layer is learning to pass the test.
         /// </summary>
         [TestMethod]
@@ -47,6 +47,47 @@ namespace ANN_TDD
             }
 
             return previousError;
+        }
+
+
+        [TestMethod]
+        public void ShallHandleXOr()
+        {
+            // given
+            INetFactory factory = new NetFactory();
+            INet net = factory.CreateNet(2, 1, 2);
+
+            // when
+            float previousError = float.MaxValue;
+
+            for (int i = 0; i < 100; i++)
+            {
+                float currentError = 0;
+
+                currentError += Run(new float[] { (float)1.0, (float)0.0 }, new float[] { (float)1.0 }, net);
+                currentError += Run(new float[] { (float)0.0, (float)1.0 }, new float[] { (float)1.0 }, net);
+
+                currentError += Run(new float[] { (float)1.0, (float)1.0 }, new float[] { (float)0.0 }, net);
+                currentError += Run(new float[] { (float)0.0, (float)0.0 }, new float[] { (float)0.0 }, net);
+
+                // then
+                Assert.IsTrue(previousError > currentError);
+                previousError = currentError;
+            }
+        }
+
+        /// <summary>
+        /// Runs backpropagation
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="correctOutput"></param>
+        /// <param name="net"></param>
+        /// <returns>The error of the net</returns>
+        private float Run(float[] input, float[] correctOutput, INet net)
+        {
+            float error = CalculateError(correctOutput, net.Update(input));
+            net.Backpropagate(correctOutput);
+            return error;
         }
     }
 }
