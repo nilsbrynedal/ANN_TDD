@@ -28,7 +28,7 @@ namespace ANN_TDD
             return data;
         }
 
-        private Data(int label, float[] pixles)
+        public Data(int label, float[] pixles)
         {
             Label = label;
             Pixles = pixles;
