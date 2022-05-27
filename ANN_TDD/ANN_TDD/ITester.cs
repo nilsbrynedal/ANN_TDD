@@ -2,7 +2,7 @@
 
 namespace ANN_TDD
 {
-    internal interface ITester
+    public interface ITester
     {
         float Test(IIdentifier identifier, List<Data> data);
     }

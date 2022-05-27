@@ -2,7 +2,7 @@
 
 namespace ANN_TDD
 {
-    internal class Tester : ITester
+    public class Tester : ITester
     {
         public Tester()
         {

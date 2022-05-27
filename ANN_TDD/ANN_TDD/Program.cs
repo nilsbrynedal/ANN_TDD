@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ANN_TDD
 {
@@ -15,6 +16,13 @@ namespace ANN_TDD
             IIdentifier identifier = new Identifier(net);
             
             var output = identifier.Identify(data[0].Pixles);
+            Tester tester = new Tester();
+
+            float proportion = tester.Test(identifier, data);
+
+            Console.WriteLine("Identified " + (proportion * 100).ToString() + "% correctly");
+
+            Console.ReadKey();
         }
     }
 }

@@ -25,7 +25,9 @@ namespace ANN_TDD
                 }
                 data.Add(new Data(label, pixles));
             }
-            return data;
+
+            // The last index seems to be read incorrectly
+            return data.GetRange(0, data.Count - 1);
         }
 
         public Data(int label, float[] pixles)
