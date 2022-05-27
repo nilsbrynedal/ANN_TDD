@@ -6,9 +6,10 @@ namespace ANN_TDD
     {
         private readonly List<ILayer> layers;
 
-        public Net(List<ILayer> hiddenLayers, IOutputLayer outputLayer)
+        public Net(List<IHiddenLayer> hiddenLayers, IOutputLayer outputLayer)
         {
-            layers = hiddenLayers;
+            layers = new List<ILayer>();
+            hiddenLayers.ForEach(x => layers.Add(x));
             layers.Add(outputLayer);
         }
 
@@ -17,6 +18,11 @@ namespace ANN_TDD
         public void Backpropagate(float[] correctValues)
         {
             (layers[layers.Count - 1] as IOutputLayer).Backpropagate(correctValues);
+
+            for (int i = layers.Count - 1; i >= 1; i--)
+            {
+                (layers[i - 1] as IHiddenLayer).Backpropagate(layers[i]);
+            }
         }
 
         public float[] Update(float[] data)

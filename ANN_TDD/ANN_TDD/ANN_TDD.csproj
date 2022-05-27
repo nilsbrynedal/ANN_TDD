@@ -44,7 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data.cs" />
+    <Compile Include="HiddenLayer.cs" />
     <Compile Include="Identifier.cs" />
+    <Compile Include="Interfaces\IHiddenLayer.cs" />
     <Compile Include="Interfaces\IIdentifier.cs" />
     <Compile Include="Interfaces\ILayer.cs" />
     <Compile Include="Interfaces\INet.cs" />
