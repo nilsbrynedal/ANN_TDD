@@ -3,5 +3,6 @@
     public interface INeuron
     {
         float Update(float[] data);
+        
     }
 }

@@ -36,10 +36,10 @@ namespace ANN_TDD
             }
 
             // output layer
-            List<INeuron> neuronsThirdLayer = new List<INeuron>();
+            List<IOutputNeuron> neuronsThirdLayer = new List<IOutputNeuron>();
             for (int i = 0; i < outputCount; i++)
             {
-                neuronsThirdLayer.Add(new Neuron(CreateWeights(neuronsPerHiddenLayer + 1), Sigmoid));
+                neuronsThirdLayer.Add(new OutputNeuron(CreateWeights(neuronsPerHiddenLayer + 1), Sigmoid));
             }
 
             List<ILayer> layers = new List<ILayer>()

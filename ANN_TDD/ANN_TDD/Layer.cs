@@ -5,7 +5,7 @@ namespace ANN_TDD
 {
     public class Layer : ILayer
     {
-        private readonly List<INeuron> neurons;
+        protected readonly List<INeuron> neurons;
 
         public Layer(List<INeuron> neurons)
         {
