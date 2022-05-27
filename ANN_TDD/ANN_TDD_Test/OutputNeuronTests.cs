@@ -30,6 +30,5 @@ namespace ANN_TDD
                 Assert.IsTrue(Math.Abs(newError) < Math.Abs(previousError));
             }
         }
-
     }
 }
