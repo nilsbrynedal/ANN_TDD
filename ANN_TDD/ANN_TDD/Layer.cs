@@ -17,5 +17,13 @@ namespace ANN_TDD
             var output = neurons.Select(neuron => neuron.Update(data));
             return output.ToArray();
         }
+
+        public float DownstreamError(int index)
+        {
+            float sum = 0;
+            neurons.ForEach(n => sum += n.ErrorTerm * n.Weights[index]);
+
+            return sum;
+        }
     }
 }

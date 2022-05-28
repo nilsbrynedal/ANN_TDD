@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ANN_TDD.Interfaces;
 
 namespace ANN_TDD
 {
@@ -24,17 +25,17 @@ namespace ANN_TDD
         public INet CreateNet(int inputCount, int outputCount, int neuronsPerHiddenLayer, float learningRate = (float)0.04)
         {
             // input layer
-            List<INeuron> neuronsFirstLayer = new List<INeuron>();
+            List<IHiddenNeuron> neuronsFirstLayer = new List<IHiddenNeuron>();
             for(int i = 0; i < neuronsPerHiddenLayer; i++)
             {
-                neuronsFirstLayer.Add(new Neuron(CreateWeights(inputCount + 1), Sigmoid));
+                neuronsFirstLayer.Add(new HiddenNeuron(CreateWeights(inputCount + 1), Sigmoid, DerivativeOfSigmoid, learningRate));
             }
 
             // hidden layer
-            List<INeuron> neuronsSecondLayer = new List<INeuron>();
+            List<IHiddenNeuron> neuronsSecondLayer = new List<IHiddenNeuron>();
             for (int i = 0; i < neuronsPerHiddenLayer; i++)
             {
-                neuronsSecondLayer.Add(new Neuron(CreateWeights(neuronsPerHiddenLayer + 1), Sigmoid));
+                neuronsSecondLayer.Add(new HiddenNeuron(CreateWeights(neuronsPerHiddenLayer + 1), Sigmoid, DerivativeOfSigmoid, learningRate));
             }
 
             // output layer
