@@ -54,8 +54,9 @@ namespace ANN_TDD
         public void ShallHandleXOr()
         {
             // given
-            INetFactory factory = new NetFactory();
-            INet net = factory.CreateNet(2, 1, 2, (float)0.1);
+            Random random = new Random(1); // Use a constant seed to ensure repeatability of the test
+            INetFactory factory = new NetFactory(random);
+            INet net = factory.CreateNet(2, 1, 3, (float)0.1);
 
             // when
             float previousError = float.MaxValue;

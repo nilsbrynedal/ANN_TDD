@@ -13,6 +13,11 @@ namespace ANN_TDD
             random = new Random();
         }
 
+        public NetFactory(Random random)
+        {
+            this.random = random;
+        }
+
         /// <summary>
         /// Creates a new net
         /// </summary>
