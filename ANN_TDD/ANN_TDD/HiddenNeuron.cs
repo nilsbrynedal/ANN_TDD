@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using ANN_TDD.Interfaces;
 
 namespace ANN_TDD
@@ -18,7 +15,7 @@ namespace ANN_TDD
 
         public void UpdateErrorTerm(float downstreamError)
         {
-            ErrorTerm = derivationFunction(output) * downstreamError;
+            ErrorTerm = derivationFunction(activation) * downstreamError;
         }
     }
 }

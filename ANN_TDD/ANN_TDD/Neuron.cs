@@ -9,6 +9,7 @@ namespace ANN_TDD
         private float errorTerm;
         protected float output;
         protected float[] inputs;
+        protected float activation;
 
         public Neuron(float[] weights, Func<float, float> activationFunction, float learningRate = (float)0.04)
         {
@@ -26,8 +27,7 @@ namespace ANN_TDD
 
             this.inputs = inputs;
 
-            float activation = 0;
-
+            activation = 0;
             for (int i = 0; i < inputs.Length; i++)
             {
                 activation += inputs[i] * Weights[i];

@@ -15,7 +15,7 @@ namespace ANN_TDD
 
         public void UpdateErrorTerm(float correctValue)
         {
-            ErrorTerm = (correctValue - output) * derivativeOfActivationFunc(output);
+            ErrorTerm = (correctValue - output) * derivativeOfActivationFunc(activation);
         }
     }
 }
