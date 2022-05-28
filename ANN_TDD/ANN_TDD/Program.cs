@@ -30,6 +30,7 @@ namespace ANN_TDD
             proportion = tester.Test(identifier, validationSet);
             Console.WriteLine("Identified " + (proportion * 100).ToString() + "% of validation set correctly");
 
+            Console.WriteLine("\nPress any key to close...");
             Console.ReadKey();
         }
     }
