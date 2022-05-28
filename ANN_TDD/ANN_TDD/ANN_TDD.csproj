@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data.cs" />
+    <Compile Include="DataSplitter.cs" />
     <Compile Include="HiddenLayer.cs" />
     <Compile Include="HiddenNeuron.cs" />
     <Compile Include="Identifier.cs" />

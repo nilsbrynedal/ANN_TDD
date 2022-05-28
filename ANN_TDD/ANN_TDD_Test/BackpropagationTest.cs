@@ -55,7 +55,7 @@ namespace ANN_TDD
         {
             // given
             INetFactory factory = new NetFactory();
-            INet net = factory.CreateNet(2, 1, 2);
+            INet net = factory.CreateNet(2, 1, 2, (float)0.1);
 
             // when
             float previousError = float.MaxValue;
